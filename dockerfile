@@ -1,12 +1,13 @@
-FROM golang:1.22
-WORKDIR /usr/src/app
+FROM golang:latest
 
-COPY go.mod go.sum ./
-RUN go mod download && go mod verify
+RUN mkdir /app
+WORKDIR /app
 
-COPY . .
+RUN cd /app && git clone https://github.com/sebi5000/CostEstimator.git
+RUN cd /app/CostEstimator && go mod download
 
-RUN mkdir /usr/src/app/output
-RUN go build -v -o ./output ./...
+RUN mkdir /app/CostEstimator/build
+RUN cd /app/CostEstimator && go build -o /app/CostEstimator/build/main cmd/*.go
 
-CMD ["app"]
+EXPOSE 8080
+ENTRYPOINT [ "/app/CostEstimator/build/main" ]
