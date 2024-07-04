@@ -1,7 +1,7 @@
 package services
 
 import (
-	"sphere/cmd/model"
+	"costestimator/cmd/model"
 )
 
 type LicenseCalcService struct {

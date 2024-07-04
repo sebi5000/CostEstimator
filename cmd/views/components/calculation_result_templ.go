@@ -14,7 +14,7 @@ import "golang.org/x/text/message"
 import "golang.org/x/text/language"
 
 import (
-	"sphere/cmd/services"
+	"costestimator/cmd/services"
 )
 
 func CalculationResult(licenseService services.LicenseCalcService) templ.Component {

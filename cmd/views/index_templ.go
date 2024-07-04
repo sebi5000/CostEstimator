@@ -11,7 +11,7 @@ import "io"
 import "bytes"
 
 import (
-	"sphere/cmd/views/components"
+	"costestimator/cmd/views/components"
 )
 
 func Index() templ.Component {

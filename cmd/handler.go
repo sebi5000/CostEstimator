@@ -1,13 +1,13 @@
 package main
 
 import (
+	htmx "costestimator/cmd/HTMX"
+	"costestimator/cmd/model"
+	"costestimator/cmd/model/status"
+	"costestimator/cmd/services"
+	"costestimator/cmd/views"
+	"costestimator/cmd/views/components"
 	"net/http"
-	htmx "sphere/cmd/HTMX"
-	"sphere/cmd/model"
-	"sphere/cmd/model/status"
-	"sphere/cmd/services"
-	"sphere/cmd/views"
-	"sphere/cmd/views/components"
 	"strconv"
 
 	"github.com/a-h/templ"
