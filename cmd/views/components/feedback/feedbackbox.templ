@@ -1,0 +1,34 @@
+package feedback
+
+templ FeedbackBox() {
+
+    <script type="text/javascript">
+        
+        function getCSSClassForFeedbackType(level){
+            
+            switch (level) {
+                case "success":
+                    return "pico-background-green-400";
+                case "info":
+                    return "pico-background-azure-600";
+                case "warning":
+                    return "pico-background-yellow-200";
+                case "danger":
+                    return "pico-background-red-500";
+            }
+
+            return "";
+        }
+        
+    </script>
+    <div x-data="{level: '', message: ''}" @onStatusChanged.window="level = $event.detail.level; message = $event.detail.message;">
+        <div x-show="level != ''">
+            <article :class="getCSSClassForFeedbackType(level)" style="position: relative;width:50%;">
+                <div style="float: right">
+                    <span class="fa-solid fa-circle-xmark" @click="level = ''" style="cursor: pointer"/>
+                </div>
+                <p x-text="message" style="display: inline;"></p>
+            </article>
+        </div>
+    </div>
+}

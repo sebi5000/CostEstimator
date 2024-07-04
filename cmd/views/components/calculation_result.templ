@@ -1,0 +1,44 @@
+package components
+
+import "golang.org/x/text/message"
+import "golang.org/x/text/language"
+
+import(
+    "sphere/cmd/services"
+)
+
+templ CalculationResult(licenseService services.LicenseCalcService){
+    <div class="container">
+        <hr>
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Sales-Cloud License Cost</p>
+                    <p class="title">{ message.NewPrinter(language.English).Sprintf("%.2f $", float64(licenseService.CalcModuleCosts("sales")))}</p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Overall License Cost</p>
+                    <p class="title"><u>{ message.NewPrinter(language.English).Sprintf("%.2f $", float64(licenseService.CalcOverallCosts()))}</u></p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Service-Cloud License Cost</p>
+                    <p class="title">{ message.NewPrinter(language.English).Sprintf("%.2f $", float64(licenseService.CalcModuleCosts("service")))}</p>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero is-warning is-small">
+            <div class="hero-body">
+                <p class="title">Disclaimer</p>
+                <p class="subtitle">
+                    Please note that all prices have been researched to the best of our knowledge and belief. No one guarantees the accuracy of the information and Salesforce may change prices at any time without notice. Reliable prices can only be obtained from your Salesforce sales representative.
+                </p>
+            </div>
+        </section>
+
+    </div>
+}

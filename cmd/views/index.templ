@@ -1,0 +1,26 @@
+package views
+
+import(
+    "sphere/cmd/views/components"
+)
+
+templ Index() {
+    <!DOCTYPE html>
+    <html lang="de">
+    @components.Header()
+        <body style="padding:0.5em">
+            <div class="columns is-flex-direction-column" style="height: 100vh">
+                <header class="column is-narrow">
+                </header>
+                <main class="column">
+                    @components.Calculator()
+                    <div id="calculation_result">
+                    </div>               
+                </main>
+                <footer class="column is-narrow">
+                    @components.Footer()
+                </footer>
+            </div>
+        </body>
+    </html>
+}
