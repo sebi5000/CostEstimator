@@ -13,5 +13,5 @@ func main() {
 	router.Post("/calculate_price", calculatePriceHandler)
 	router.Post("/clear_price", clearPriceHandler)
 
-	http.ListenAndServe(":8000", router)
+	http.ListenAndServe(":8080", router)
 }
