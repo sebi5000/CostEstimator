@@ -1,8 +1,6 @@
 module costestimator
 
-go 1.22.0
-
-toolchain go1.22.3
+go 1.22
 
 require (
 	github.com/a-h/templ v0.2.697
