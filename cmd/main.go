@@ -11,6 +11,7 @@ import (
 func main() {
 	router := chi.NewRouter()
 	router.Get("/", indexHandler)
+	router.Get("/request-calculation", requestCalculationHandler)
 
 	router.Post("/calculate_price", calculatePriceHandler)
 	router.Post("/clear_price", clearPriceHandler)

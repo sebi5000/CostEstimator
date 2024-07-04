@@ -2,10 +2,9 @@ package views
 
 import(
     "costestimator/cmd/views/components"
-    "costestimator/cmd/views/components/license_calculator"
 ) 
 
-templ Index() {
+templ RequestCalculation(){
     <!DOCTYPE html>
     <html lang="de">
     @components.Header()
@@ -15,9 +14,7 @@ templ Index() {
                 <header class="column is-narrow">
                 </header>
                 <main class="column">
-                    @licensecalculator.Calculator()
-                    <div id="calculation_result">
-                    </div>               
+                    <h1>Wurst</h1>
                 </main>
                 <footer class="column is-narrow">
                     @components.Footer()

@@ -12,10 +12,9 @@ import "bytes"
 
 import (
 	"costestimator/cmd/views/components"
-	"costestimator/cmd/views/components/license_calculator"
 )
 
-func Index() templ.Component {
+func RequestCalculation() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -44,15 +43,7 @@ func Index() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"columns is-flex-direction-column\" style=\"height: 100vh\"><header class=\"column is-narrow\"></header><main class=\"column\">")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		templ_7745c5c3_Err = licensecalculator.Calculator().Render(ctx, templ_7745c5c3_Buffer)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"calculation_result\"></div></main><footer class=\"column is-narrow\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"columns is-flex-direction-column\" style=\"height: 100vh\"><header class=\"column is-narrow\"></header><main class=\"column\"><h1>Wurst</h1></main><footer class=\"column is-narrow\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -6,7 +6,7 @@ import (
 	"costestimator/cmd/model/status"
 	"costestimator/cmd/services"
 	"costestimator/cmd/views"
-	"costestimator/cmd/views/components"
+	licensecalculator "costestimator/cmd/views/components/license_calculator"
 	"net/http"
 	"strconv"
 
@@ -15,6 +15,10 @@ import (
 
 func indexHandler(w http.ResponseWriter, r *http.Request) {
 	templ.Handler(views.Index()).ServeHTTP(w, r)
+}
+
+func requestCalculationHandler(w http.ResponseWriter, r *http.Request) {
+	templ.Handler(views.RequestCalculation()).ServeHTTP(w, r)
 }
 
 func calculatePriceHandler(w http.ResponseWriter, r *http.Request) {
@@ -76,19 +80,19 @@ func calculatePriceHandler(w http.ResponseWriter, r *http.Request) {
 	serviceCalc.Discount = exp_discount
 
 	if r.Form.Get("einstein_for_service") == "on" {
-		serviceCalc.AddAddOn("einstein_for_service", model.LicenseCalculation{Module: "service", Count: salesCalc.Count, Type: model.LicenseType{Type: "addon"}, Discount: exp_discount})
+		serviceCalc.AddAddOn("einstein_for_service", model.LicenseCalculation{Module: "service", Count: serviceCalc.Count, Type: model.LicenseType{Type: "addon"}, Discount: exp_discount})
 
 	}
 
 	if r.Form.Get("einstein_bots") == "on" {
-		serviceCalc.AddAddOn("einstein_bots", model.LicenseCalculation{Module: "sales", Count: salesCalc.Count, Type: model.LicenseType{Type: "addon"}, Discount: exp_discount})
+		serviceCalc.AddAddOn("einstein_bots", model.LicenseCalculation{Module: "sales", Count: serviceCalc.Count, Type: model.LicenseType{Type: "addon"}, Discount: exp_discount})
 	}
 
 	var licenseCalcs []model.LicenseCalculation
 	licenseCalcs = append(licenseCalcs, salesCalc, serviceCalc)
 	licenseService := services.NewLicenseCalcService(licenseCalcs)
 
-	templ.Handler(components.CalculationResult(licenseService)).ServeHTTP(w, r)
+	templ.Handler(licensecalculator.CalculationResult(licenseService)).ServeHTTP(w, r)
 }
 
 func clearPriceHandler(w http.ResponseWriter, r *http.Request) {
