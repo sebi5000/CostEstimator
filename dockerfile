@@ -1,13 +1,12 @@
-FROM golang:1.20-alpine
+FROM golang:1.22
+WORKDIR /usr/src/app
 
-WORKDIR /cmd
-COPY go.mod ./
-RUN go mod download
+COPY go.mod go.sum ./
+RUN go mod download && go mod verify
 
-COPY *.go ./
+COPY . .
 
-RUN go build -o /costestimator
+RUN mkdir /usr/src/app/output
+RUN go build -v -o ./output ./...
 
-EXPOSE 8080
-
-CMD ["/costestimator"]
+CMD ["app"]
