@@ -1,0 +1,44 @@
+package requestcalculator
+
+import(
+    "costestimator/cmd/services"
+    "golang.org/x/text/language"
+    "golang.org/x/text/message"
+)
+
+templ RequestResult(requestCalcService services.RequestCalculationService) {
+    <div class="container">
+        <hr>
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Requests direct use:</p>
+                    <p class="title">{message.NewPrinter(language.English).Sprintf("%.0f", float64(requestCalcService.CalculateRequests()))}</p>
+                </div>
+            </div>
+                        <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Requests used 5 times a workday in month:</p>
+                    <p class="title">{message.NewPrinter(language.English).Sprintf("%.0f", float64(requestCalcService.CalculateRequests() * 100))}</p>
+                </div>
+            </div>
+                        <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading">Requests used 15 times a workday in month:</p>
+                    <p class="title">{message.NewPrinter(language.English).Sprintf("%.0f", float64(requestCalcService.CalculateRequests() * 300))}</p>
+                </div>
+            </div>
+        </nav>
+
+        <article class="message is-warning">
+            <div class="message-header">
+                <p>Disclaimer</p>
+            </div>
+            <div class="message-body">
+                <p>
+                    Please note that all calculations have been researched to the best of our knowledge and belief. No one guarantees the accuracy of the information and Salesforce may change numbers at any time without notice. Reliable information can only be obtained from your Salesforce sales representative.
+                </p>
+            </div>
+        </article>
+    </div>
+}

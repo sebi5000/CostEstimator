@@ -12,6 +12,7 @@ import "bytes"
 
 import (
 	"costestimator/cmd/views/components"
+	"costestimator/cmd/views/components/request_calculator"
 )
 
 func RequestCalculation() templ.Component {
@@ -43,15 +44,15 @@ func RequestCalculation() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"columns is-flex-direction-column\" style=\"height: 100vh\"><header class=\"column is-narrow\"></header><main class=\"column\"><h1>Wurst</h1></main><footer class=\"column is-narrow\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"columns is-flex-direction-column\" style=\"height: 100vh\"><header class=\"column is-narrow\"></header><main class=\"column\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = components.Footer().Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = requestcalculator.RequestCalculator().Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</footer></div></body></html>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div id=\"request_result\"></div></main><footer class=\"column is-narrow\"><!--@components.Footer()--></footer></div></body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

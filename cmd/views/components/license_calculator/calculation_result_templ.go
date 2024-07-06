@@ -30,7 +30,7 @@ func CalculationResult(licenseService services.LicenseCalcService) templ.Compone
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"container\"><hr><nav class=\"level\"><div class=\"level-item has-text-centered\"><div><p class=\"heading\">Sales-Cloud License Cost</p><p class=\"title\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"container\"><hr><nav class=\"level\"><div class=\"level-item has-text-centered\"><div><p class=\"heading\">Sales-Cloud License Cost per month</p><p class=\"title\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -43,7 +43,7 @@ func CalculationResult(licenseService services.LicenseCalcService) templ.Compone
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div></div><div class=\"level-item has-text-centered\"><div><p class=\"heading\">Overall License Cost</p><p class=\"title\"><u>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div></div><div class=\"level-item has-text-centered\"><div><p class=\"heading\">Overall License Cost per month</p><p class=\"title\"><u>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -56,7 +56,7 @@ func CalculationResult(licenseService services.LicenseCalcService) templ.Compone
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</u></p></div></div><div class=\"level-item has-text-centered\"><div><p class=\"heading\">Service-Cloud License Cost</p><p class=\"title\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</u></p></div></div><div class=\"level-item has-text-centered\"><div><p class=\"heading\">Service-Cloud License Cost per month</p><p class=\"title\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -69,7 +69,7 @@ func CalculationResult(licenseService services.LicenseCalcService) templ.Compone
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div></div></nav><section class=\"hero is-warning is-small\"><div class=\"hero-body\"><p class=\"title\">Disclaimer</p><p class=\"subtitle\">Please note that all prices have been researched to the best of our knowledge and belief. No one guarantees the accuracy of the information and Salesforce may change prices at any time without notice. Reliable prices can only be obtained from your Salesforce sales representative.</p></div></section></div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</p></div></div></nav><article class=\"message is-warning\"><div class=\"message-header\"><p>Disclaimer</p></div><div class=\"message-body\"><p>Please note that all prices have been researched to the best of our knowledge and belief. No one guarantees the accuracy of the information and Salesforce may change prices at any time without notice. Reliable prices can only be obtained from your Salesforce sales representative.</p></div></article></div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -2,9 +2,10 @@ package views
 
 import(
     "costestimator/cmd/views/components"
+    "costestimator/cmd/views/components/request_calculator"
 ) 
 
-templ RequestCalculation(){
+templ RequestCalculation() {
     <!DOCTYPE html>
     <html lang="de">
     @components.Header()
@@ -14,10 +15,12 @@ templ RequestCalculation(){
                 <header class="column is-narrow">
                 </header>
                 <main class="column">
-                    <h1>Wurst</h1>
+                    @requestcalculator.RequestCalculator()
+                    <div id="request_result">
+                    </div>
                 </main>
                 <footer class="column is-narrow">
-                    @components.Footer()
+                    <!--@components.Footer()-->
                 </footer>
             </div>
         </body>

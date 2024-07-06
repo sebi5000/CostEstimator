@@ -7,6 +7,7 @@ import (
 	"costestimator/cmd/services"
 	"costestimator/cmd/views"
 	licensecalculator "costestimator/cmd/views/components/license_calculator"
+	requestcalculator "costestimator/cmd/views/components/request_calculator"
 	"net/http"
 	"strconv"
 
@@ -96,5 +97,30 @@ func calculatePriceHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func clearPriceHandler(w http.ResponseWriter, r *http.Request) {
+	//Simple Clear Handler - don't need code
+}
+
+func calculateRequestHandler(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	inputCount := len(r.Form.Get("einstein_input"))
+	outputCount := len(r.Form.Get("einstein_output"))
+	choosenModel := r.Form.Get("model")
+
+	if outputCount == 0 {
+		outputCount = inputCount
+	}
+
+	var requestCalc model.RequestCalculation
+	requestCalc.EinsteinInput = inputCount
+	requestCalc.EinsteintOutput = outputCount
+	requestCalc.Model = *model.NewLLM(choosenModel)
+
+	var requestService services.RequestCalculationService
+	requestService.Request = requestCalc
+
+	templ.Handler(requestcalculator.RequestResult(requestService)).ServeHTTP(w, r)
+}
+
+func clearRequestHandler(w http.ResponseWriter, r *http.Request) {
 	//Simple Clear Handler - don't need code
 }

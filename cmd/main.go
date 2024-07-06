@@ -16,6 +16,9 @@ func main() {
 	router.Post("/calculate_price", calculatePriceHandler)
 	router.Post("/clear_price", clearPriceHandler)
 
+	router.Post("/calculate_request", calculateRequestHandler)
+	router.Post("/clear_request", clearRequestHandler)
+
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"

@@ -7,38 +7,40 @@ import(
     "costestimator/cmd/services"
 )
 
-templ CalculationResult(licenseService services.LicenseCalcService){
+templ CalculationResult(licenseService services.LicenseCalcService) {
     <div class="container">
         <hr>
         <nav class="level">
             <div class="level-item has-text-centered">
                 <div>
-                    <p class="heading">Sales-Cloud License Cost</p>
+                    <p class="heading">Sales-Cloud License Cost per month</p>
                     <p class="title">{ message.NewPrinter(language.English).Sprintf("%.2f $", float64(licenseService.CalcModuleCosts("sales")))}</p>
                 </div>
             </div>
             <div class="level-item has-text-centered">
                 <div>
-                    <p class="heading">Overall License Cost</p>
+                    <p class="heading">Overall License Cost per month</p>
                     <p class="title"><u>{ message.NewPrinter(language.English).Sprintf("%.2f $", float64(licenseService.CalcOverallCosts()))}</u></p>
                 </div>
             </div>
             <div class="level-item has-text-centered">
                 <div>
-                    <p class="heading">Service-Cloud License Cost</p>
+                    <p class="heading">Service-Cloud License Cost per month</p>
                     <p class="title">{ message.NewPrinter(language.English).Sprintf("%.2f $", float64(licenseService.CalcModuleCosts("service")))}</p>
                 </div>
             </div>
         </nav>
 
-        <section class="hero is-warning is-small">
-            <div class="hero-body">
-                <p class="title">Disclaimer</p>
-                <p class="subtitle">
+        <article class="message is-warning">
+            <div class="message-header">
+                <p>Disclaimer</p>
+            </div>
+            <div class="message-body">
+                <p>
                     Please note that all prices have been researched to the best of our knowledge and belief. No one guarantees the accuracy of the information and Salesforce may change prices at any time without notice. Reliable prices can only be obtained from your Salesforce sales representative.
                 </p>
             </div>
-        </section>
+        </article>
 
     </div>
 }

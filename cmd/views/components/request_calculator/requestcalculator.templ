@@ -1,0 +1,93 @@
+package requestcalculator
+
+templ RequestCalculator() {
+    
+    <script>
+        //https://loripsum.net/api
+        function getSmallText(){
+            return "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et"
+        }
+
+        function getMidText(){
+            return "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."
+        }
+
+        function getLargeText(){
+            return `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+            Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
+            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+            Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+            Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
+            At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur`
+        }
+
+    </script>
+
+    <div class="container">
+
+        <div x-data="{show: true}">
+            <article class="message" x-show="show">
+                <div class="message-header">
+                    <p>Info about Request Calculation</p>
+                    <button class="delete" aria-label="delete" type="button" @click="show=false" />
+                </div>
+                <div class="message-body">
+                    <p>Notice, that Salesforce measure your Einstein Generative Requests. Actually you will have 25,000 Requests per user/month within your Einstein License Subscription.</p>
+                    <p>How much Requests you are using with one task for Einstein is calculated based on the following formular:</p>
+                    <p>Einstein Input + Einstein Output (word count) / 1,500 = Number uprounded to next integer * Multiplier (depends on Model) = REQUEST COUNT</p>
+                    <p>e.g. (2,000 + 500) / 1,500 = 2 * 10 = 20</p><br>
+                    <p><a href="https://trailhead.salesforce.com/de/content/learn/modules/einstein-pricing-quick-look">Official Trailhead Information from Salesforce</a></p>
+                </div>
+            </article>
+        </div>
+
+        <form class="box" x-data="{ einstein_text: '' }">
+            <div class="field">
+                <label class="label">Model (LLM)</label>
+                <div class="select">
+                    <select name="model">
+                        <option value="own">Own LLM</option>
+                        <option value="foundation" selected>Salesforce Foundation LLM</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Einstein Request</label>
+                        <textarea name="einstein_input" class="textarea" placeholder="e.g. Which account makes most revenue this year?" x-model="einstein_text"></textarea>
+                    </div>
+
+                    <div class="columns">
+                        <div class="column is-one-third">
+                            <button class="button is-fullwidth" @click="einstein_text = getSmallText()" type="button">Small Testinput</button>
+                        </div>
+                        <div class="column is-one-third">
+                            <button class="button is-fullwidth" @click="einstein_text = getMidText()" type="button">Mid Testinput</button>
+                        </div>
+                        <div class="column is-one-third">
+                            <button class="button is-fullwidth" @click="einstein_text = getLargeText()" type="button">Large Testinput</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Einstein Output</label>
+                        <textarea name="einstein_output" class="textarea" disabled x-text="einstein_text"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <button class="button is-primary" type="submit" hx-post="calculate_request" hx-target="#request_result" hx-swap="innerHTML">Calculate</button>
+            <button class="button is-link is-light" type="reset" hx-post="clear_request" hx-target="#request_result" hx-swap="innerHTML" @click="einstein_text = ''">Clear</button>
+        </form>
+    </div>
+}
